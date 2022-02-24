@@ -11,17 +11,20 @@ const div_precio_item = document.querySelector("#precio-item-div");
 const codigo_estado = document.querySelector("#codigo-estado");
 const div_codigo_estado = document.querySelector("#codigo-item-div"); 
 
-
+const div_precio_neto = document.querySelector("#precio-neto-div");
 
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
+   
+  var precio_neto = precio_item.value * cantidad_item.value;
   div_cantidad_item.innerHTML = "<p> Cantidad de item: " + cantidad_item.value + "</p>";
   div_precio_item.innerHTML = "<p> Precio de item: " + precio_item.value + "</p>";
 
   div_codigo_estado.innerHTML = "<p> Codigo del Estado de "+ codigo_estado.value +": " + porcentaje_estado(codigo_estado.value) + "%</p>";
   
+  div_precio_neto.innerHTML = "<p> Precio Neto: " + precio_neto + "</p>";
+
 });
 
 
